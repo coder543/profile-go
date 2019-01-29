@@ -61,6 +61,9 @@ func Stop() {
 	if err := mem.Close(); err != nil {
 		log.Fatalf("failed to close mem profile file: %v", err)
 	}
+	if err := cpu.Close(); err != nil {
+		log.Fatalf("failed to close cpu profile file: %v", err)
+	}
 	if err := tr.Close(); err != nil {
 		log.Fatalf("failed to close trace file: %v", err)
 	}
